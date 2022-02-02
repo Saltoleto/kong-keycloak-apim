@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "821ca58b-75a1-4831-8d82-c5e5d5260dcf",
+		"name": "kong",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Get Access Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "jbs",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "36249fdc-f5e9-422b-bf30-48b2ad5b307d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{YOUR_IP}:8080/auth/realms/apim/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"200",
+								"110"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"realms",
+								"apim",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Pet by Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJwOG1tMEcxQUVoQndZNU53amFQT2FaQWVYMFZ6Z0ZpTlcwNnROdDB0dFB3In0.eyJleHAiOjE2NDM2NDQxNjAsImlhdCI6MTY0MzY0Mzg2MCwianRpIjoiMzNlZWU3ODYtNDQyNi00MWQ5LTgzMWEtZGVhYTRkZWNmYjMyIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMjAwLjExMDo4MDgwL2F1dGgvcmVhbG1zL2FwaW0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYmRiZDAyNDUtMGMzOC00YjdmLWFmM2YtMmZlMzI4OThiMDg3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXlhcHAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsImNsaWVudElkIjoibXlhcHAiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1teWFwcCIsImNsaWVudEFkZHJlc3MiOiIxNzIuMjAuMC4xIn0.bIZa6T8EjLKOZnQEDCGWiTPaV34c9EY27TWfmEC_ZfT9leCGz8vxQz8SKCY8TaEeOi0cPskTA9AUl-Ll6JFi8Uzpr9fAPo9TY4rLNaE7pXF8mEUu0J1MKywkIV5_-IAurrH3xwqqXQuGQinccOrtoijrmMAHxBGUV881VbF0iGB7mknoQpRGpTYpUyRBfBTJWtLPWxFdcgXVUDrM6djb56aGE5IRGBd0mPJw4_qNbzXY_5VemrDtcRPgX1c7jJ72IXyHcyxidS4871wCB6A4tl77Cx28_Xbu951qGA9LwbEJN8-cU6Glc6CPmTQXl5O-px7EzDDCfzXY39RfBiTZLg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJwOG1tMEcxQUVoQndZNU53amFQT2FaQWVYMFZ6Z0ZpTlcwNnROdDB0dFB3In0.eyJleHAiOjE2NDM2NDU2MzEsImlhdCI6MTY0MzY0NTMzMSwianRpIjoiNWUyYjNkYzMtMTcxMC00YzFlLWE0MjktMzZkYTNjNmZiNDM3IiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMjAwLjExMDo4MDgwL2F1dGgvcmVhbG1zL2FwaW0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTM5ZDFjMWEtZjUyOS00MzY0LWFmODQtODlkNTgwZjE5NWQwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamJzIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SWQiOiJqYnMiLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LWpicyIsImNsaWVudEFkZHJlc3MiOiIxNzIuMjAuMC4xIn0.jTZFynvSMcElToVGxm8bF8EftMDQBb_mtpOUyVObortmRxhS9fAXa6JlUZCmsJGrdPBgEXCFF6M5-vaKn7gNyccER_4UeNaQqZ5e-4Vjh6BO9xH-Hwh9BtqjQK6d0eF4SBSPXmpacJb4V2hqE6W_xuYdNKFXYstRQrA1kkh5R-_3C6J4Apepa_Yiur4X9G_89DvBnuXIzRw1x3BRkuA7jn9mDc5mptY5G0lTgpnFbJn7A_L0H-7ztWuPg1FdOuDUmo9ZFExdotHETWlbQDaWOZmba4zIEtDKkfAROhBoL2wQ4Om5ltPIK-zJLIy9Pz99IGMozjVc9My1XWTghJjNKA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/v2/pet/findByStatus?status=available",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v2",
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "available"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/metrics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create a Service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"petstore\",\r\n    \"host\": \"petstore.swagger.io\",\r\n    \"port\": 443,\r\n    \"protocol\": \"https\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Route FindByStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"findByStatus\",\r\n    \"service\": {\r\n        \"name\" : \"petstore\"\r\n        },\r\n       \"paths\": [\"/v2/pet/findByStatus\"],\r\n       \"strip_path\": false    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/routes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Rate Limite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rate-limiting\",\r\n    \"config\": {\r\n        \"minute\": 5,\r\n        \"hour\": 10000,\r\n        \"policy\": \"local\",\r\n        \"fault_tolerant\": true,\r\n        \"hide_client_headers\": false,\r\n        \"redis_ssl\": false,\r\n        \"redis_ssl_verify\": false\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/routes/saltoleto/plugins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"routes",
+						"saltoleto",
+						"plugins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add OIDC plugin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"oidc\",\r\n    \"config\": {\r\n        \"client_id\": \"kong\",\r\n        \"client_secret\": \"66a82728-1fac-4a03-a005-6e86c7acdd8f\",\r\n        \"bearer_only\": \"yes\",\r\n        \"realm\": \"apim\",\r\n        \"introspection_endpoint\": \"http://192.168.200.110:8080/auth/realms/apim/protocol/openid-connect/token/introspect\",\r\n        \"discovery\": \"http://192.168.200.110:8080/auth/realms/apim/.well-known/openid-configuration\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/plugins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"plugins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Consumer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"saltoleto\",\r\n    \"custom_id\": \"6066660\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/consumers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"consumers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Prometheus Plugin a Service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"prometheus\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/plugins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"plugins"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
